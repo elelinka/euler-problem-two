@@ -17,31 +17,31 @@ class FibonacciServiceTest {
     }
 
     @Test
-    void whenRangeIsTen_shouldEvenSumBeFortyFour() {
-        int expectedResult = 44;
-        int range = 10;
-
-        int result = fibonacciService.sumEvenNumbers(range);
-
-        assertThat(result).isEqualTo(expectedResult);
-    }
-
-    @Test
-    void whenValuesLessThanSix_shouldEvenSumBeTen() {
+    void whenMaxNumberInSequenceIsTen_shouldEvenSumBeTen() {
         int expectedResult = 10;
-        int range = 6;
+        int maxNumber = 10;
 
-        int result = fibonacciService.sumEvenNumbers(range);
+        int result = fibonacciService.sumEvenNumbers(maxNumber);
 
         assertThat(result).isEqualTo(expectedResult);
     }
 
     @Test
-    void whenRangeIsTen_shouldListContainsTwentyOne() {
-        int number = 21;
-        int range = 10;
+    void whenMaxNumberInSequenceIsSix_shouldEvenSumBeTwo() {
+        int expectedResult = 2;
+        int maxNumber = 6;
 
-        List<Integer> list = fibonacciService.getFibonacciSequence(range);
+        int result = fibonacciService.sumEvenNumbers(maxNumber);
+
+        assertThat(result).isEqualTo(expectedResult);
+    }
+
+    @Test
+    void whenMaxNumberInSequenceIsTwenty_shouldListContainsThirteen() {
+        int number = 13;
+        int maxNumber = 20;
+
+        List<Integer> list = fibonacciService.getFibonacciSequence(maxNumber);
 
         assertThat(list).contains(number);
     }

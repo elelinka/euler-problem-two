@@ -1,13 +1,13 @@
 package com.example.eulerproblemtwo.service;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class FibonacciService {
 
-    public int sumEvenNumbers(int range) {
+    public int sumEvenNumbers(int maxNumber) {
         int sum = 0;
-        List<Integer> numberList = getFibonacciSequence(range);
+        List<Integer> numberList = getFibonacciSequence(maxNumber);
         for (Integer i : numberList) {
             if (isEvenNumber(i)) {
                 sum += i;
@@ -16,18 +16,27 @@ public class FibonacciService {
         return sum;
     }
 
-    public List<Integer> getFibonacciSequence(int range) {
-        List<Integer> list = new ArrayList<>();
+    public List<Integer> getFibonacciSequence(int maxNumber) {
+        LinkedList<Integer> list = new LinkedList<>();
         int first = 1;
         int second = 1;
         int temp = 1;
+        list.add(first);
+        list.add(second);
 
-        for (int i = 2; i < range; i++) {
+        do {
             temp = first + second;
-            list.add(temp);
             first = second;
             second = temp;
-        }
+            list.add(temp);
+        } while (temp < maxNumber);
+
+//        while (temp < maxNumber){
+//            temp = first + second;
+//            list.add(temp);
+//            first = second;
+//            second = temp;
+//        }
         return list;
     }
 
