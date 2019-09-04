@@ -1,6 +1,5 @@
-package com.example.service;
+package com.example.eulerproblemtwo.service;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,9 +25,9 @@ class FibonacciServiceTest {
     }
 
     @Test
-    void whenValuesLessThanFourMln_shouldEvenSumBe4613732() {
-        int expectedResult = 4613732;
-        int range = 33;
+    void whenValuesLessThanSix_shouldEvenSumBeTen() {
+        int expectedResult = 10;
+        int range = 6;
 
         int result = fibonacciService.sumEvenNumbers(range);
 
