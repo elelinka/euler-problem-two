@@ -1,6 +1,6 @@
 package com.example.eulerproblemtwo.service;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FibonacciService {
@@ -17,26 +17,18 @@ public class FibonacciService {
     }
 
     public List<Integer> getFibonacciSequence(int maxNumber) {
-        LinkedList<Integer> list = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
         int first = 1;
         int second = 1;
         int temp = 1;
         list.add(first);
-        list.add(second);
 
-        do {
+        while (temp < maxNumber) {
+            list.add(temp);
             temp = first + second;
             first = second;
             second = temp;
-            list.add(temp);
-        } while (temp < maxNumber);
-
-//        while (temp < maxNumber){
-//            temp = first + second;
-//            list.add(temp);
-//            first = second;
-//            second = temp;
-//        }
+        }
         return list;
     }
 

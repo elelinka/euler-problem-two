@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class FibonacciServiceTest {
 
@@ -37,9 +37,9 @@ class FibonacciServiceTest {
     }
 
     @Test
-    void whenMaxNumberInSequenceIsTwenty_shouldListContainsThirteen() {
-        int number = 13;
-        int maxNumber = 20;
+    void whenMaxNumberInSequenceIsNinety_shouldListContainsEightyNine() {
+        int number = 89;
+        int maxNumber = 90;
 
         List<Integer> list = fibonacciService.getFibonacciSequence(maxNumber);
 
