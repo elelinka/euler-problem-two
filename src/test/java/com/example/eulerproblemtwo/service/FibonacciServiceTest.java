@@ -3,6 +3,8 @@ package com.example.eulerproblemtwo.service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 class FibonacciServiceTest {
@@ -35,12 +37,12 @@ class FibonacciServiceTest {
     }
 
     @Test
-    void whenRangeIsTwo_shouldReturnOne() {
-        int expectedResult = 1;
-        int range = 2;
+    void whenRangeIsTen_shouldListContainsTwentyOne() {
+        int number = 21;
+        int range = 10;
 
-        int result = fibonacciService.getFibonacciSequence(range);
+        List<Integer> list = fibonacciService.getFibonacciSequence(range);
 
-        assertThat(result).isEqualTo(expectedResult);
+        assertThat(list).contains(number);
     }
 }
